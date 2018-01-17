@@ -8,6 +8,7 @@ package servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,6 +18,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author syescassut1
  */
+@WebServlet(urlPatterns="/login")
 public class LoginServlet extends HttpServlet {
 
     /**
@@ -36,10 +38,10 @@ public class LoginServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoginServlet</title>");            
+            out.println("<title>Login</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<form method=\"post\" action=\"LoginServlet\">");
+            out.println("<form method=\"post\" action=\""+request.getContextPath()+"/login\">");
             out.println("<fieldset>");
             out.println("<legend>Login</legend>");
             out.println("<label for=\"pseudo\">Pseudo </label>");
@@ -89,7 +91,7 @@ public class LoginServlet extends HttpServlet {
         HttpSession session = request.getSession();
         session.setAttribute("pseudo", pseudo);
         
-        response.sendRedirect(request.getContextPath()+"/ListProductServlet");
+        response.sendRedirect(request.getContextPath()+"/listProduct");
     }
 
     /**

@@ -13,6 +13,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -21,6 +22,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author syescassut1
  */
+@WebFilter(urlPatterns="/addProduct")
 public class RequestLoggingFilter implements Filter{
 
     private ServletContext context;
@@ -37,7 +39,7 @@ public class RequestLoggingFilter implements Filter{
         HttpSession session = request.getSession();
         
         if(session.getAttribute("pseudo") == null) {
-            response.sendRedirect(request.getContextPath()+"/LoginServlet");
+            response.sendRedirect(request.getContextPath()+"/login");
         } else {
             chain.doFilter(request, response);
         }

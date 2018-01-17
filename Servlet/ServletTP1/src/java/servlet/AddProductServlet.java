@@ -8,6 +8,7 @@ package servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,6 +19,7 @@ import model.ListProduct;
  *
  * @author syescassut1
  */
+@WebServlet(urlPatterns="/addProduct")
 public class AddProductServlet extends HttpServlet {
     
     /**
@@ -37,11 +39,11 @@ public class AddProductServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet AddProductServlet</title>");            
+            out.println("<title>Add Product</title>");            
             out.println("</head>");
             out.println("<body>");
             out.println("<a href=\"LogoutServlet\">Logout</a>");
-            out.println("<form method=\"post\" action=\"AddProductServlet\">");
+            out.println("<form method=\"post\" action=\""+request.getContextPath()+"/addProduct\">");
             out.println("<fieldset>");
             out.println("<legend>Add Product</legend>");
             out.println("<label for=\"ID\">ID </label>");
@@ -57,7 +59,7 @@ public class AddProductServlet extends HttpServlet {
             out.println("<br />");
             out.println("</fieldset>");
             out.println("</form>");
-            out.println("<a href=\"ListProductServlet\">List Products</a>");
+            out.println("<a href=\""+request.getContextPath()+"listProduct\">List Products</a>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -95,7 +97,7 @@ public class AddProductServlet extends HttpServlet {
         
         ListProduct.products.add(new Product(id, name, price));
 
-        response.sendRedirect(request.getContextPath()+"/ListProductServlet");
+        response.sendRedirect(request.getContextPath()+"/listProduct");
     }
 
     /**

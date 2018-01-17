@@ -9,6 +9,7 @@ package servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,7 +20,10 @@ import model.Product;
  *
  * @author syescassut1
  */
+@WebServlet(urlPatterns="/listProduct")
 public class ListProductServlet extends HttpServlet {
+   
+    private String Vue = "/listProduct.jsp";
     
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,15 +43,15 @@ public class ListProductServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ListProductServlet</title>");            
+            out.println("<title>List Product</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<a href=\"LogoutServlet\">Logout</a>");
+            out.println("<a href=\""+request.getContextPath()+"/logout\">Logout</a>");
             out.println("<h1>My products :</h1>");
             for(Product p : ListProduct.products) {
                 out.println("<p>"+p.toString()+"</p>");
             }
-            out.println("<a href=\"AddProductServlet\">Add Product</a>");
+            out.println("<a href=\""+request.getContextPath()+"/addProduct\">Add Product</a>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -65,7 +69,8 @@ public class ListProductServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        request.setAttribute("products", ListProduct.products);
+        this.getServletContext().getRequestDispatcher( Vue ).forward( request, response );
     }
 
     /**

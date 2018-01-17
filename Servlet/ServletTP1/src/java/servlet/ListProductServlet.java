@@ -21,9 +21,6 @@ import model.Product;
  */
 public class ListProductServlet extends HttpServlet {
     
-    public static final String view = "/WEB-INF/listProduct.jsp";
-
-    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.

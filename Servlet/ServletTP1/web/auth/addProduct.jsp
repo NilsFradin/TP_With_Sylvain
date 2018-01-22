@@ -5,15 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<% String path = request.getContextPath(); %>
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Add Product</title>
-    </head>
-    <body>
-        <a href="LogoutServlet">Logout</a>
-        <form method="post" action="<%= path+"/addProduct"%>">
+<%@ include file="header.jsp" %>
+        <a href="<%= path + "/logout"%>">Logout</a>
+        <form method="post" action="<%= path+"/auth/addProduct"%>">
             <fieldset>
                 <legend>Add Product</legend>
                 <label for="ID">ID </label>
@@ -30,5 +24,4 @@
             </fieldset>
         </form>
         <a href="<%= path+"/listProduct"%>">List Products</a>
-    </body>
-</html>
+<%@ include file="footer.jsp" %>

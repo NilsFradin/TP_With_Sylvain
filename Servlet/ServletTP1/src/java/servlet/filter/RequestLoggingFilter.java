@@ -22,7 +22,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author syescassut1
  */
-@WebFilter(urlPatterns="/addProduct")
+@WebFilter(urlPatterns="/auth/*")
 public class RequestLoggingFilter implements Filter{
 
     private ServletContext context;

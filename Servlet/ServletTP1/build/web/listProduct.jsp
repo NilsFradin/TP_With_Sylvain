@@ -4,26 +4,37 @@
     Author     : syescassut1
 --%>
 
-<%@page import="java.util.ArrayList"%>
-<%@page import="model.Product"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
-<% ArrayList<Product> products = (ArrayList<Product>) request.getAttribute("products");  %>
-<% String path = request.getContextPath();%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>List Product</title>          
-    </head>
-    <body>  
-        <a href="<%= path + "/logout"%>">Logout</a>
-        <h1>My products :</h1>
-        <table>       
-            <% for (Product p : products) {%>
-            <tr>      
-                <td><%= p%></td>
-            </tr>
-            <% }%>
-        </table>
-        <a href="<%= path + "/addProduct"%>">Add Product</a>
-    </body>
-</html>
+<jsp:useBean id="ListProduct"
+             scope="page" 
+             class="model.ListProduct"/>
+
+
+<c:import url="header.jsp"/>
+<c:if test="${sessionScope.pseudo != null}">
+    <a href="${pageContext.request.contextPath}/logout"><c:out value="Logout"/></a>
+</c:if>
+<c:if test="${sessionScope.pseudo == null}">
+    <a href="${pageContext.request.contextPath}/login"><c:out value="Login"/></a>
+</c:if>
+<h1><c:out value="My products :"/></h1>
+<table>       
+    <tr>
+        <label><c:out value="Display with JSTL Core :" /></label>
+    </tr>
+    <c:forEach items="${ListProduct.products}" var="product">
+        <tr>
+            <td><c:out value="${product}" /></td>
+            <td>
+                <c:if test="${sessionScope.pseudo != null}">
+                    <a href="${pageContext.request.contextPath}/auth/removeProduct?id=${product.id}"><c:out value="Delete"/></a>
+                </c:if>
+            </td>
+        </tr>
+    </c:forEach>
+</table>       
+<c:if test="${sessionScope.pseudo != null}">
+    <a href="${pageContext.request.contextPath}/auth/addProduct"><c:out value="Add Product"/></a>
+</c:if>
+<c:import url="footer.jsp"/>

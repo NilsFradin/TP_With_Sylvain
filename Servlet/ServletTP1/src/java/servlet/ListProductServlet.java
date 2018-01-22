@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.ListProduct;
-import model.Product;
 
 /**
  *
@@ -40,20 +39,6 @@ public class ListProductServlet extends HttpServlet {
         
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>List Product</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<a href=\""+request.getContextPath()+"/logout\">Logout</a>");
-            out.println("<h1>My products :</h1>");
-            for(Product p : ListProduct.products) {
-                out.println("<p>"+p.toString()+"</p>");
-            }
-            out.println("<a href=\""+request.getContextPath()+"/addProduct\">Add Product</a>");
-            out.println("</body>");
-            out.println("</html>");
         }
     }
 
@@ -69,7 +54,7 @@ public class ListProductServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setAttribute("products", ListProduct.products);
+        request.setAttribute("title", "List Products");
         this.getServletContext().getRequestDispatcher( Vue ).forward( request, response );
     }
 

@@ -21,6 +21,8 @@ import javax.servlet.http.HttpSession;
 @WebServlet(urlPatterns="/login")
 public class LoginServlet extends HttpServlet {
 
+    private String Vue = "/login.jsp";
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -35,27 +37,6 @@ public class LoginServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Login</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<form method=\"post\" action=\""+request.getContextPath()+"/login\">");
-            out.println("<fieldset>");
-            out.println("<legend>Login</legend>");
-            out.println("<label for=\"pseudo\">Pseudo </label>");
-            out.println("<input type=\"text\" id=\"pseudo\" name=\"pseudo\" value=\"\" size=\"20\" maxlength=\"60\" />");
-            out.println("<br />");
-            out.println("<label for=\"password\">Password </label>");
-            out.println("<input type=\"password\" id=\"password\" name=\"password\" value=\"\" size=\"20\" maxlength=\"20\" />");
-            out.println("<br />");
-            out.println("<input type=\"submit\" value=\"Login\"/>");
-            out.println("<br />");
-            out.println("</fieldset>");
-            out.println("</form>");
-            out.println("</body>");
-            out.println("</html>");
         }
     }
 
@@ -71,7 +52,8 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        request.setAttribute("title", "Login");
+        this.getServletContext().getRequestDispatcher( Vue ).forward( request, response );
     }
 
     /**

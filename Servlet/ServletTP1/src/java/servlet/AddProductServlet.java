@@ -19,8 +19,10 @@ import model.ListProduct;
  *
  * @author syescassut1
  */
-@WebServlet(urlPatterns="/addProduct")
+@WebServlet(urlPatterns="/auth/addProduct")
 public class AddProductServlet extends HttpServlet {
+    
+    private String Vue = "/auth/addProduct.jsp";
     
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,32 +38,6 @@ public class AddProductServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Add Product</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<a href=\"LogoutServlet\">Logout</a>");
-            out.println("<form method=\"post\" action=\""+request.getContextPath()+"/addProduct\">");
-            out.println("<fieldset>");
-            out.println("<legend>Add Product</legend>");
-            out.println("<label for=\"ID\">ID </label>");
-            out.println("<input type=\"text\" id=\"ID\" name=\"ID\" value=\"\" size=\"20\" maxlength=\"60\" />");
-            out.println("<br />");
-            out.println("<label for=\"name\">Name </label>");
-            out.println("<input type=\"text\" id=\"name\" name=\"name\" value=\"\" size=\"20\" maxlength=\"20\" />");
-            out.println("<br />");
-            out.println("<label for=\"price\">Price </label>");
-            out.println("<input type=\"text\" id=\"price\" name=\"price\" value=\"\" size=\"20\" maxlength=\"20\" />");
-            out.println("<br />");
-            out.println("<input type=\"submit\" value=\"ADD\"/>");
-            out.println("<br />");
-            out.println("</fieldset>");
-            out.println("</form>");
-            out.println("<a href=\""+request.getContextPath()+"listProduct\">List Products</a>");
-            out.println("</body>");
-            out.println("</html>");
         }
     }
 
@@ -77,7 +53,8 @@ public class AddProductServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        request.setAttribute("title", "Add Product");
+        this.getServletContext().getRequestDispatcher( Vue ).forward( request, response );
     }
 
     /**

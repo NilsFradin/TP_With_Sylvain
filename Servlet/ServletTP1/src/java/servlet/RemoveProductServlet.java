@@ -12,14 +12,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import model.ListProduct;
+import model.Product;
 
 /**
  *
  * @author syescassut1
  */
-@WebServlet(urlPatterns="/logout")
-public class LogoutServlet extends HttpServlet {
+@WebServlet(urlPatterns ="/auth/removeProduct")
+public class RemoveProductServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -50,10 +51,14 @@ public class LogoutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        session.invalidate();
+        int id = Integer.parseInt(request.getParameter("id"));
+        for(Product p : ListProduct.products) {
+            if(p.getId() == id) {
+                ListProduct.products.remove(p);
+            }
+        }
         
-        response.sendRedirect(request.getContextPath()+"/login");
+        response.sendRedirect(request.getContextPath()+"/listProduct");
     }
 
     /**

@@ -31,24 +31,6 @@ class FibonacciController extends Controller
         return new Response('<html><body>Result: '.$result.'</body></html>');
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     /**
      * @Route("/fibonacciCalcul")
      */

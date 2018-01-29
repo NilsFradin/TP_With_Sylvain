@@ -45,7 +45,7 @@ public class GenericResource {
      * @return an instance of java.lang.String
      */
     @GET
-    @Path("get")
+    //@Path("get")
     @Produces("text/html")
     public String getHtml() {
         String content ="<html><body>";
@@ -57,7 +57,7 @@ public class GenericResource {
         content += "<a href=\"/CloudTP1/webresources/generic/delete/livre\">/CloudTP1/webresources/generic/delete/{livre}</a><br>";
         content += "<a href=\"/CloudTP1/webresources/generic/put/oldLivre/newLivre\">/CloudTP1/webresources/generic/put/{oldLivre}/{newLivre}</a><br>";
         content += "</body></html>";
-        
+
         return content;
     }
 

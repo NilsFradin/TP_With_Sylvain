@@ -49,7 +49,36 @@ class Article
      */
     private $actif;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Categorie", inversedBy="articles")
+     * @ORM\JoinTable(name="articles_categories")
+     */
+    private $categories;
 
+    /**
+     * Get categories
+     *
+     * @return int
+     */
+    public function getCategories()
+    {
+        return $this->categories;
+    }
+    
+    /**
+     * Set categories
+     *
+     * @param $categories
+     *
+     * @return Article
+     */
+    public function setCategories($categories)
+    {
+        $this->categories = $categories;
+
+        return $this;
+    }
+    
     /**
      * Get id
      *

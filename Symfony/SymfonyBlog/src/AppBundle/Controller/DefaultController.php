@@ -13,9 +13,50 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
+        $user = $this->getUser();
+        
+        if(empty($user)){
+            return $this->redirectToRoute("fos_user_security_login");
+        }
+        
+        $articles = $this->getDoctrine()
+            ->getRepository('AppBundle:Article')
+            ->findAll();
+
+        return $this->render('default/index.html.twig',
+            array('articles' => $articles)
+        );
+    }
+    
+    /**
+     * @Route("/sport", name="sport")
+     */
+    public function sportAction(Request $request)
+    {
+        $categorie = $this->getDoctrine()
+            ->getRepository('AppBundle:Categorie')
+            ->findOneByLibelle("Sport");
+       
+        $articles = $categorie->getArticles();
+
+        return $this->render('default/sport.html.twig',
+            array('articles' => $articles)
+        );
+    }
+    
+    /**
+     * @Route("/divertissement", name="divertissement")
+     */
+    public function divertissementAction(Request $request)
+    {
+        $categorie = $this->getDoctrine()
+            ->getRepository('AppBundle:Categorie')
+            ->findOneByLibelle("Divertissement");
+        
+        $articles = $categorie->getArticles();
+
+        return $this->render('default/divertissement.html.twig',
+            array('articles' => $articles)
+        );
     }
 }

@@ -18,6 +18,8 @@ Generate entity :
 
 Create Database with Entities :
 	bin/console doctrine:schema:create
+Update Database with Entities :
+	bin/console doctrine:schema:update --force
 
 Load Fixtures in Database : 
 	bin/console doctrine:fixtures:load

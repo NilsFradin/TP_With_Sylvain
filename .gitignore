@@ -1,7 +1,6 @@
 CloudComputing/CloudTP1/nbproject/private/private.xml
 CloudComputing/CloudTP1/nbproject/project.properties
 CloudComputing/CloudTP1/nbproject/private/private.properties
-
 /CloudComputing/SystemeTP2/nbproject/private/
 /CloudComputing/SystemeTP2/build/
 /Symfony/SymfonyBlog/nbproject/private/
@@ -32,3 +31,4 @@ CloudComputing/CloudTP1/nbproject/private/private.properties
 /Servlet/HelloWorldProject/HelloWorldProject-war/dist/
 /Servlet/SystemeTP3_EscassutSylvain/nbproject/private/
 /Servlet/SystemeTP3_EscassutSylvain/build/
+/Symfony/SymfonyTP2/nbproject/

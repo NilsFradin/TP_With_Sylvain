@@ -7,7 +7,9 @@
             {% for article in articles %}
                 <li>{{ article.titre }}</li>
             {% endfor %}
-        </ul> 
-        <a href="{{path('addArticle')}}" class="badge badge-primary">Add Article</a>
+        </ul>
+        {% if is_granted('ROLE_ADMIN') %} 
+            <a href="{{path('addArticle')}}" class="badge badge-primary">Add Article</a>
+        {% endif %}
     </div>
 {% endblock %}

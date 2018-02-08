@@ -7,18 +7,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
-{
+{   
     /**
      * @Route("/", name="homepage")
      */
     public function indexAction(Request $request)
     {
-        $user = $this->getUser();
-        
+        $user = $this->getUser();        
         if(empty($user)){
             return $this->redirectToRoute("fos_user_security_login");
         }
-        
+
         $articles = $this->getDoctrine()
             ->getRepository('AppBundle:Article')
             ->findAll();
@@ -33,6 +32,11 @@ class DefaultController extends Controller
      */
     public function sportAction(Request $request)
     {
+        $user = $this->getUser();        
+        if(empty($user)){
+            return $this->redirectToRoute("fos_user_security_login");
+        }
+        
         $categorie = $this->getDoctrine()
             ->getRepository('AppBundle:Categorie')
             ->findOneByLibelle("Sport");
@@ -49,6 +53,11 @@ class DefaultController extends Controller
      */
     public function divertissementAction(Request $request)
     {
+        $user = $this->getUser();        
+        if(empty($user)){
+            return $this->redirectToRoute("fos_user_security_login");
+        }
+        
         $categorie = $this->getDoctrine()
             ->getRepository('AppBundle:Categorie')
             ->findOneByLibelle("Divertissement");

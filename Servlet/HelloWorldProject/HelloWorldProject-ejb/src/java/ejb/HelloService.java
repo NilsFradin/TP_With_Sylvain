@@ -15,7 +15,7 @@ import javax.ejb.Stateless;
 public class HelloService implements HelloServiceRemote {
     @Override
     public String sayHello(){
-        return "Hello, World !";
+        return "Hello, World !!";
     }
 }
 

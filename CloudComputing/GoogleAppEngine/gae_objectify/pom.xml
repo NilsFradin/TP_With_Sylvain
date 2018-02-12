@@ -74,7 +74,12 @@
   	<artifactId>google-cloud-datastore</artifactId>
   	<version>1.14.0</version>
   </dependency>
-  </dependencies>
+  <dependency>
+  	<groupId>org.glassfish.jersey.inject</groupId>
+  	<artifactId>jersey-hk2</artifactId>
+  	<version>2.26</version>
+  </dependency>	  
+</dependencies>
 
   <build>
     <!-- for hot reload of the web application-->

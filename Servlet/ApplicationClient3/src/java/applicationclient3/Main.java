@@ -23,7 +23,7 @@ public class Main {
     public static void main(String[] args) {
         try {
             Context context = new InitialContext();
-            //HelloService helloService = (HelloService)context.lookup("java:global/HelloWorldProject/HelloWorldProject-ejb/HelloServiceServlet!ejb.HelloService");
+            HelloService helloService = (HelloService)context.lookup("java:global/HelloWorldProject/HelloWorldProject-ejb/HelloServiceServlet!ejb.HelloService");
             System.out.println(helloService.sayHello());
         } catch (NamingException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+        <title><h:outputText value="SupRails - Trips"/></title>
+        <style>
+            table {
+                width: 80%; 
+                margin: auto;
+                border-collapse: collapse;
+            }
+            
+            table tr td, table tr th {
+                text-align: center;
+                border: 1px solid black;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h:dataTable rendered="#{not empty listBean.trips}" value="#{listBean.trips}" var="trip">
+            <h:column>
+                <f:facet name="header">Departure</f:facet>
+                <h:outputText value="#{trip.departureStation}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Arrival</f:facet>
+                <h:outputText value="#{trip.arrivalStation}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Price</f:facet>
+                <h:outputText value="#{trip.price}"/>
+            </h:column>
+            <h:column rendered="#{not empty user}">
+                <f:facet name="header">Action</f:facet>
+                <h:form>
+                    <h:commandButton action="#{listBean.deleteTrip(trip.id)}" value="Delete"/>
+                </h:form>
+            </h:column>
+        </h:dataTable>
+        <h:outputText rendered="#{empty listBean.trips}" value="No Trips in Database." />
+        <h:form>
+            <h:commandButton value="Add Trip" action="addTrip"/>
+        </h:form>
+    </h:body>
+</html>

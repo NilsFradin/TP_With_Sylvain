@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+        <title><h:outputText value="SupRails"/></title>
+    </h:head>
+    <h:body>
+        <ul>
+            <h:form>
+            <li>
+                <h:commandLink action="stations" value="Train Stations" />
+            </li>
+            <li>
+                <h:commandLink action="trips" value="Trips" />
+            </li>
+            <li>
+                <h:commandLink rendered="#{not empty user}" action="logout" value="Logout"/>
+                <h:commandLink rendered="#{empty user}" action="login" value="Login"/>
+            </li>
+            </h:form>
+        </ul>
+    </h:body>
+</html>

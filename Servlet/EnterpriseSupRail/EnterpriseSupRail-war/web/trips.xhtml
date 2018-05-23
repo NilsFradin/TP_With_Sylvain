@@ -17,7 +17,7 @@ and open the template in the editor.
                 margin: auto;
                 border-collapse: collapse;
             }
-            
+
             table tr td, table tr th {
                 text-align: center;
                 border: 1px solid black;
@@ -25,7 +25,25 @@ and open the template in the editor.
         </style>
     </h:head>
     <h:body>
-        <h:dataTable rendered="#{not empty listBean.trips}" value="#{listBean.trips}" var="trip">
+        <h:form><h:commandLink action="index" value="Accueil" />
+            <div>
+                <h:outputLabel for="departure" value="Departure station :"/>
+                <h:selectOneMenu  id="departure" value="#{listBean.idfilterDeparture}">
+                    <f:selectItems value="#{listBean.selectItems}"/>
+                </h:selectOneMenu> 
+            </div>
+            <div>
+                <h:outputLabel for="arrival" value="Arrival station :"/>
+                <h:selectOneMenu id="arrival" value="#{listBean.idfilterArrival}">
+                    <f:selectItems value="#{listBean.selectItems}"/>        
+                   
+                </h:selectOneMenu>
+            </div>
+            <div>
+                <h:commandButton action="#{listBean.filterTripsBis()}" value="Filter" />
+                <h:commandButton action="#{listBean.allTrips()}" value="All Trips" />
+            </div> 
+        <h:dataTable rendered="#{not empty listBean.lesTrips}" value="#{listBean.lesTrips}" var="trip">
             <h:column>
                 <f:facet name="header">Departure</f:facet>
                 <h:outputText value="#{trip.departureStation}"/>
@@ -38,15 +56,13 @@ and open the template in the editor.
                 <f:facet name="header">Price</f:facet>
                 <h:outputText value="#{trip.price}"/>
             </h:column>
-            <h:column rendered="#{not empty user}">
+            <h:column >
                 <f:facet name="header">Action</f:facet>
-                <h:form>
-                    <h:commandButton action="#{listBean.deleteTrip(trip.id)}" value="Delete"/>
-                </h:form>
+                    <h:commandButton action="#{listBean.delete(trip.id)}" value="Delete"/>
             </h:column>
         </h:dataTable>
-        <h:outputText rendered="#{empty listBean.trips}" value="No Trips in Database." />
-        <h:form>
+        <h:outputText rendered="#{empty listBean.lesTrips}" value="No Trips in Database." />
+
             <h:commandButton value="Add Trip" action="addTrip"/>
         </h:form>
     </h:body>

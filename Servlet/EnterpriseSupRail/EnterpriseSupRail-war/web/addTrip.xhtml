@@ -13,16 +13,17 @@ and open the template in the editor.
         <title><h:outputText value = "SupRails - Add Trip"/></title>
     </h:head>
     <h:body>
+        <h:form><h:commandLink action="index" value="Accueil" /> </h:form>
         <h:form>
             <div>
                 <h:outputLabel for="departure" value="Departure station :"/>
-                <h:selectOneMenu  id="departure" value="#{listBean.id1}">
+                <h:selectOneMenu  id="departure" value="#{listBean.idaddDeparture}">
                     <f:selectItems value="#{listBean.stations}" var="ts" itemValue="#{ts.id}"  itemLabel="#{ts.name}" />
                 </h:selectOneMenu> 
             </div>
             <div>
                 <h:outputLabel for="arrival" value="Arrival station :"/>
-                <h:selectOneMenu id="arrival" value="#{listBean.id2}">
+                <h:selectOneMenu id="arrival" value="#{listBean.idaddArrival}">
                     <f:selectItems value="#{listBean.stations}" var="ts" itemValue="#{ts.id}"  itemLabel="#{ts.name}" />
                 </h:selectOneMenu>
             </div>

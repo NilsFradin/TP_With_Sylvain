@@ -1,0 +1,14 @@
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Console.ECommerce\bin\Debug\Modele.Console.ECommerce.exe.config
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Console.ECommerce\bin\Debug\DatabaseEf.mdf
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Console.ECommerce\bin\Debug\DatabaseEf_log.ldf
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Console.ECommerce\bin\Debug\Modele.Console.ECommerce.exe
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Console.ECommerce\bin\Debug\Modele.Console.ECommerce.pdb
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Console.ECommerce\bin\Debug\EntityFramework.dll
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Console.ECommerce\bin\Debug\EntityFramework.SqlServer.dll
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Console.ECommerce\bin\Debug\Modele.ECommerce.dll
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Console.ECommerce\bin\Debug\Modele.ECommerce.pdb
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Console.ECommerce\bin\Debug\EntityFramework.xml
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Console.ECommerce\bin\Debug\EntityFramework.SqlServer.xml
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Console.ECommerce\obj\Debug\Modele.Console.ECommerce.csprojResolveAssemblyReference.cache
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Console.ECommerce\obj\Debug\Modele.Console.ECommerce.exe
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Console.ECommerce\obj\Debug\Modele.Console.ECommerce.pdb

@@ -1,6 +1,7 @@
 package com.iut.suprails.service;
 
 import com.iut.suprails.dao.TripDao;
+import com.iut.suprails.entity.TrainStation;
 import com.iut.suprails.entity.Trip;
 import java.util.List;
 import javax.ejb.EJB;
@@ -31,6 +32,14 @@ public class TripService {
     
     public Trip findTripById(Long tripId) {
         return tripDao.findTripById(tripId);
+    }
+    
+    public List<Trip> findTripByDepArr(TrainStation departure, TrainStation arrival){
+        return tripDao.findTripByDepArr(departure, arrival);
+    }
+    
+     public List<Trip> findTripByDepArrBis(Long departure, Long arrival){
+        return tripDao.findTripByDepArrBis(departure, arrival);
     }
 
 }

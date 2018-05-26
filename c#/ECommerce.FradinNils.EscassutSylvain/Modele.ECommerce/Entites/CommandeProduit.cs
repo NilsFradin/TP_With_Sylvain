@@ -5,8 +5,6 @@ namespace Modele.ECommerce.Entites
 {
     public class CommandeProduit
     {
-
-
         public int ProduitId { get; set; }
 
         public Produit Produit { get; set; }

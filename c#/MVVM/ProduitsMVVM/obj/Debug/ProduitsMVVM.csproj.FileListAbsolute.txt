@@ -1,0 +1,1 @@
+U:\TP_With_Sylvain\c#\MVVM\ProduitsMVVM\bin\Debug\ProduitsMVVM.exe.config

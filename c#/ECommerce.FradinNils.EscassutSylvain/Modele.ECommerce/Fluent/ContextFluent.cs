@@ -13,7 +13,8 @@ namespace Modele.ECommerce.Fluent
     { 
         public ContextFluent() : base("name=TP1ConnexionString")
         {
-            Database.SetInitializer<ContextFluent>(new DropCreateDatabaseIfModelChanges<ContextFluent>());
+            //Database.SetInitializer<ContextFluent>(new DropCreateDatabaseIfModelChanges<ContextFluent>());
+            Database.SetInitializer<ContextFluent>(null);
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -24,5 +25,6 @@ namespace Modele.ECommerce.Fluent
         }
 
         public DbSet<Client> Clients { get; set; }
+        public DbSet<Produit> Produits { get; set;}
     }
 }

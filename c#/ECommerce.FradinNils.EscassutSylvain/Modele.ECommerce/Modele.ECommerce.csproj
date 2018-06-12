@@ -64,7 +64,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Entites\Categorie.cs" />
     <Compile Include="Entites\Client.cs" />
     <Compile Include="Entites\Commande.cs" />

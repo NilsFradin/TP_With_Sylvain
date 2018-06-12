@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 5 juin 2018 16:17:00 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Hibernate.Professeur" table="PROFESSEUR" schema="SYESCASSUT1" optimistic-lock="version">
+        <id name="idprofesseur" type="long">
+            <column name="IDPROFESSEUR" precision="11" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="nom" type="string">
+            <column name="NOM" length="20" not-null="true" />
+        </property>
+        <property name="prenom" type="string">
+            <column name="PRENOM" length="20" not-null="true" />
+        </property>
+        <property name="adressepostal" type="string">
+            <column name="ADRESSEPOSTAL" length="100" not-null="true" />
+        </property>
+        <set name="informations" table="INFORMATION" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDPROFESSEUR" precision="11" scale="0" />
+            </key>
+            <one-to-many class="Hibernate.Information" />
+        </set>
+        <set name="activites" table="ACTIVITE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDPROFESSEUR" precision="11" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="Hibernate.Activite" />
+        </set>
+    </class>
+</hibernate-mapping>

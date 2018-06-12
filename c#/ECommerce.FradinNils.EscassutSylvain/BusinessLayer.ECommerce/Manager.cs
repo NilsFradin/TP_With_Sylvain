@@ -44,6 +44,18 @@ namespace BusinessLayer.ECommerce
             ProduitQuery pq = new ProduitQuery(contexte);
             return pq.GetByID(id).ToList().First();
         }
+
+        public List<Commande> GetAllCommandes()
+        {
+            CommandeQuery cq = new CommandeQuery(contexte);
+            return cq.GetAll().ToList();
+        }
+
+        public int GetStockByCode(int code)
+        {
+            ProduitQuery pq = new ProduitQuery(contexte);
+            return pq.GetStockByCode(code).ToList().First();
+        }
        
         #endregion
     }

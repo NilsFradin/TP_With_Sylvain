@@ -1,0 +1,16 @@
+﻿@model MVC.ECommerce.Models.ProduitViewModels
+@{
+    ViewBag.Title = "UpdateProduit";
+}
+
+<div class="container">
+    <form method="post">
+        <div class="form-group">
+            @Html.TextBox("libelle", @Model.Libelle, new { @class = "form-control", @placeholder = "Libelle" })
+            @Html.TextBox("code", @Model.Code, new { @class = "form-control", @placeholder = "Code" })
+            @Html.TextBox("prix", @Model.Prix, new { @class = "form-control", @placeholder = "Prix" })
+            @Html.TextBox("stock", @Model.Stock, new { @class = "form-control", @placeholder = "Stock" })
+        </div>
+    </form>
+</div>
+

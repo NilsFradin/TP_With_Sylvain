@@ -1,0 +1,7 @@
+<service name="StringService" scope="application">
+	<description>Service de concatenation</description>
+	<messageReceivers>
+		<messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="org.apache.axis2.rpc.receivers.RPCMessageReceiver"></messageReceiver>
+	</messageReceivers>
+	<parameter name="ServiceClass">org.apache.axis2.axis2string.StringService</parameter>
+</service>

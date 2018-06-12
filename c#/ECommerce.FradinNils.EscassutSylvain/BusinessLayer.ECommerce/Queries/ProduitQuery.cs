@@ -28,5 +28,22 @@ namespace BusinessLayer.ECommerce.Queries
         {
             return _contexte.Produits.Where(p => p.Id == id);
         }
+
+        public IQueryable<int> GetStockByCode(int code)
+        {
+            return _contexte.Produits.Where(p => p.Code == code).Select(p => p.Stock);
+        }
+
+        public Produit Add(Produit produit)
+        {
+            _contexte.Produits.Add(produit);
+            return produit;
+        }
+
+        public Produit Delete(Produit produit)
+        {
+            _contexte.Produits.Remove(produit);
+            return produit;
+        }
     }
 }

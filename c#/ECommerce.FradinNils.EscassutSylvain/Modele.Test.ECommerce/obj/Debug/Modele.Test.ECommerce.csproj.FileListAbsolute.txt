@@ -1,0 +1,12 @@
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Test.ECommerce\bin\Debug\Modele.Test.ECommerce.dll.config
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Test.ECommerce\bin\Debug\Modele.Test.ECommerce.dll
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Test.ECommerce\bin\Debug\Modele.Test.ECommerce.pdb
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Test.ECommerce\bin\Debug\EntityFramework.dll
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Test.ECommerce\bin\Debug\EntityFramework.SqlServer.dll
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Test.ECommerce\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Test.ECommerce\bin\Debug\EntityFramework.xml
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Test.ECommerce\bin\Debug\EntityFramework.SqlServer.xml
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Test.ECommerce\bin\Debug\fr\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Test.ECommerce\obj\Debug\Modele.Test.ECommerce.csprojResolveAssemblyReference.cache
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Test.ECommerce\obj\Debug\Modele.Test.ECommerce.dll
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Test.ECommerce\obj\Debug\Modele.Test.ECommerce.pdb

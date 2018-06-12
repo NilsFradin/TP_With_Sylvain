@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 5 juin 2018 16:17:00 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Hibernate.Salle" table="SALLE" schema="SYESCASSUT1" optimistic-lock="version">
+        <id name="idsalle" type="long">
+            <column name="IDSALLE" precision="11" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="numero" type="long">
+            <column name="NUMERO" precision="11" scale="0" not-null="true" />
+        </property>
+        <property name="type" type="string">
+            <column name="TYPE" length="20" not-null="true" />
+        </property>
+        <set name="activites" table="ACTIVITE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDSALLE" precision="11" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="Hibernate.Activite" />
+        </set>
+    </class>
+</hibernate-mapping>

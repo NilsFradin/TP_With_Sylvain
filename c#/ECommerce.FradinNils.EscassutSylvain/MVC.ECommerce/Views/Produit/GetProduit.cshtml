@@ -1,0 +1,13 @@
+﻿@model MVC.ECommerce.Models.ProduitViewModels
+@{
+    ViewBag.Title = "GetProduit";
+}
+
+<div class="container">
+    <h1>@Model.Libelle</h1>
+    <p>Prix : @Model.Prix €</p>
+    <p>Stock : @Model.Stock</p>
+    <p>Code : @Model.Code</p>
+    <p>@Html.ActionLink("Modifier", "UpdateProduit", "Produit", new { id = @Model.Id }, new { @class = "list-group-item" })</p>
+</div>
+

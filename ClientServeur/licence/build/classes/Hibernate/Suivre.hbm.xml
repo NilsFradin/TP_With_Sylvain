@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 5 juin 2018 16:17:00 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Hibernate.Suivre" table="SUIVRE" schema="SYESCASSUT1" optimistic-lock="version">
+        <id name="idsuivre" type="long">
+            <column name="IDSUIVRE" precision="11" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="activite" class="Hibernate.Activite" fetch="select">
+            <column name="IDACTIVITE" precision="11" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="etudiant" class="Hibernate.Etudiant" fetch="select">
+            <column name="IDETUDIANT" precision="11" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="statut" type="string">
+            <column name="STATUT" length="20" not-null="true" />
+        </property>
+        <property name="note" type="double">
+            <column name="NOTE" precision="126" scale="0" not-null="true" />
+        </property>
+        <property name="temps" type="date">
+            <column name="TEMPS" length="7" not-null="true" />
+        </property>
+        <property name="appreciation" type="string">
+            <column name="APPRECIATION" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

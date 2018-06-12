@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/AxisTp1/Operations?wsdl" uri="wsdl/localhost_8080/AxisTp1/Operations.wsdl"/>
+    <system systemId="http://localhost:8080/AxisTp1/Operations?xsd=1" uri="wsdl/localhost_8080/AxisTp1/Operations.xsd_1.xsd"/>
+</catalog>

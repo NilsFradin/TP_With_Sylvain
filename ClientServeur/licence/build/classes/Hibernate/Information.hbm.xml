@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 5 juin 2018 16:17:00 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Hibernate.Information" table="INFORMATION" schema="SYESCASSUT1" optimistic-lock="version">
+        <id name="idinformation" type="long">
+            <column name="IDINFORMATION" precision="11" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="etudiant" class="Hibernate.Etudiant" fetch="select">
+            <column name="IDETUDIANT" precision="11" scale="0" />
+        </many-to-one>
+        <many-to-one name="professeur" class="Hibernate.Professeur" fetch="select">
+            <column name="IDPROFESSEUR" precision="11" scale="0" />
+        </many-to-one>
+        <many-to-one name="type" class="Hibernate.Type" fetch="select">
+            <column name="IDTYPE" precision="11" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="valeur" type="string">
+            <column name="VALEUR" length="100" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

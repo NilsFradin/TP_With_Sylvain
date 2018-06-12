@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 5 juin 2018 16:17:00 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Hibernate.Etudiant" table="ETUDIANT" schema="SYESCASSUT1" optimistic-lock="version">
+        <id name="idetudiant" type="long">
+            <column name="IDETUDIANT" precision="11" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="nom" type="string">
+            <column name="NOM" length="20" not-null="true" />
+        </property>
+        <property name="prenom" type="string">
+            <column name="PRENOM" length="20" not-null="true" />
+        </property>
+        <property name="adressepostal" type="string">
+            <column name="ADRESSEPOSTAL" length="100" not-null="true" />
+        </property>
+        <property name="groupe" type="long">
+            <column name="GROUPE" precision="11" scale="0" not-null="true" />
+        </property>
+        <set name="informations" table="INFORMATION" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDETUDIANT" precision="11" scale="0" />
+            </key>
+            <one-to-many class="Hibernate.Information" />
+        </set>
+        <set name="suivres" table="SUIVRE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDETUDIANT" precision="11" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="Hibernate.Suivre" />
+        </set>
+    </class>
+</hibernate-mapping>

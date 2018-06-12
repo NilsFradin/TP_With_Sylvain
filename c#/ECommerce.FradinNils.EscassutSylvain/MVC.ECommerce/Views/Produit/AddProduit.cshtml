@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "AddProduit";
+}
+
+<div class="container">
+    <form method="post">
+        <div class="form-group">
+            @Html.TextBox("libelle", null, new { @class = "form-control", @placeholder = "Libelle" })
+            @Html.TextBox("code", null, new { @class = "form-control", @placeholder = "Code" })
+            @Html.TextBox("prix", null, new { @class = "form-control", @placeholder = "Prix" })
+            @Html.TextBox("stock", null, new { @class = "form-control", @placeholder = "Stock" })
+        </div>
+    </form>
+</div>
+

@@ -59,13 +59,28 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="ProduitTest.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="Test\CategorieTest.cs" />
+    <Compile Include="Test\ClientTest.cs" />
+    <Compile Include="Test\CommandeProduitTest.cs" />
+    <Compile Include="Test\CommandeTest.cs" />
+    <Compile Include="Test\LogProduitTest.cs" />
+    <Compile Include="Test\ProduitTest.cs" />
+    <Compile Include="Test\StatutTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer.ECommerce\BusinessLayer.ECommerce.csproj">
+      <Project>{33c2259d-1064-41db-b329-83a77a0e33cf}</Project>
+      <Name>BusinessLayer.ECommerce</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modele.ECommerce\Modele.ECommerce.csproj">
+      <Project>{5086c648-016b-4e94-893e-af52fb2e09ed}</Project>
+      <Name>Modele.ECommerce</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

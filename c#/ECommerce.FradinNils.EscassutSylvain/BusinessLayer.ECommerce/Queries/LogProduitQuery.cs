@@ -20,18 +20,6 @@ namespace BusinessLayer.ECommerce.Queries
         public IQueryable<LogProduit> GetAll()
         {
             return _contexte.LogsProduits;
-        }
-
-        public LogProduit Add(LogProduit logProduit)
-        {
-            _contexte.LogsProduits.Add(logProduit);
-            return logProduit;
-        }
-
-        public LogProduit Delete(LogProduit logProduit)
-        {
-            _contexte.LogsProduits.Remove(logProduit);
-            return logProduit;
-        }
+        }  
     }
 }

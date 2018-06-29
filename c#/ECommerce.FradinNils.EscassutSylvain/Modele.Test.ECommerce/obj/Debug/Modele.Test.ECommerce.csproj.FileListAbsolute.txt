@@ -10,3 +10,9 @@ U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Test.ECommerce
 U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Test.ECommerce\obj\Debug\Modele.Test.ECommerce.csprojResolveAssemblyReference.cache
 U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Test.ECommerce\obj\Debug\Modele.Test.ECommerce.dll
 U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Test.ECommerce\obj\Debug\Modele.Test.ECommerce.pdb
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Test.ECommerce\bin\Debug\DatabaseEf.mdf
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Test.ECommerce\bin\Debug\DatabaseEf_log.ldf
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Test.ECommerce\bin\Debug\BusinessLayer.ECommerce.dll
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Test.ECommerce\bin\Debug\Modele.ECommerce.dll
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Test.ECommerce\bin\Debug\BusinessLayer.ECommerce.pdb
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\Modele.Test.ECommerce\bin\Debug\Modele.ECommerce.pdb

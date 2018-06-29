@@ -99,9 +99,9 @@ U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\MVC.ECommerce\bin\fr\
 U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\MVC.ECommerce\obj\Debug\MVC.ECommerce.csprojResolveAssemblyReference.cache
 U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\MVC.ECommerce\obj\Debug\MVC.ECommerce.dll
 U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\MVC.ECommerce\obj\Debug\MVC.ECommerce.pdb
-U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\MVC.ECommerce\bin\Service.ECommerce.dll
 U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\MVC.ECommerce\bin\Modele.ECommerce.dll
 U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\MVC.ECommerce\bin\BusinessLayer.ECommerce.dll
-U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\MVC.ECommerce\bin\Service.ECommerce.pdb
 U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\MVC.ECommerce\bin\Modele.ECommerce.pdb
 U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\MVC.ECommerce\bin\BusinessLayer.ECommerce.pdb
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\MVC.ECommerce\bin\DatabaseEf.mdf
+U:\TP_With_Sylvain\c#\ECommerce.FradinNils.EscassutSylvain\MVC.ECommerce\bin\DatabaseEf_log.ldf

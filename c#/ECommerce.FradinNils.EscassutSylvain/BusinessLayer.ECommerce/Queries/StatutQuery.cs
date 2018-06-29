@@ -21,17 +21,5 @@ namespace BusinessLayer.ECommerce.Queries
         {
             return _contexte.Statuts;
         }
-
-        public Statut Add(Statut statut)
-        {
-            _contexte.Statuts.Add(statut);
-            return statut;
-        }
-
-        public Statut Delete(Statut statut)
-        {
-            _contexte.Statuts.Remove(statut);
-            return statut;
-        }
     }
 }

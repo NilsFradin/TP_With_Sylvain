@@ -29,21 +29,19 @@ namespace BusinessLayer.ECommerce.Queries
             return _contexte.Produits.Where(p => p.Id == id);
         }
 
+        public IQueryable<Produit> GetFiveProduit()
+        {
+            return _contexte.Produits.OrderByDescending(p => p.Prix).Take(5);
+        }
+
+        public IQueryable<Produit> GetByLibelle(string libelle)
+        {
+            return _contexte.Produits.Where(p => p.Libelle.ToUpper().Contains(libelle.ToUpper()));
+        }
+
         public IQueryable<int> GetStockByCode(int code)
         {
             return _contexte.Produits.Where(p => p.Code == code).Select(p => p.Stock);
-        }
-
-        public Produit Add(Produit produit)
-        {
-            _contexte.Produits.Add(produit);
-            return produit;
-        }
-
-        public Produit Delete(Produit produit)
-        {
-            _contexte.Produits.Remove(produit);
-            return produit;
         }
     }
 }

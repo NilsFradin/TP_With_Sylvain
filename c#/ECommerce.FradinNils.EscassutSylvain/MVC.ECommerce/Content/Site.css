@@ -22,3 +22,23 @@ select,
 textarea {
     max-width: 280px;
 }
+
+li.input-group {
+    margin-top: 8px;
+}
+
+div.input-group, a.btn.btn-primary, a.btn.btn-danger {
+    margin-top: 13px;
+}
+
+.jumbotron {
+    margin-bottom: 30px;
+}
+
+.list-group {
+    max-width: 800px;
+}
+
+.text-bold {
+    font-weight: bold;
+}

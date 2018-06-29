@@ -8,6 +8,11 @@ namespace Modele.ECommerce.Entites
 {
     public class LogProduit
     {
+        public LogProduit()
+        {
+            Date = DateTime.Now;
+        }
+
         public int Id { get; set; }
 
         public string Message { get; set; }

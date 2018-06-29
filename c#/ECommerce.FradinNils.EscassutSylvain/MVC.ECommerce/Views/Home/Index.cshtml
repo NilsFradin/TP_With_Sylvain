@@ -1,20 +1,28 @@
-﻿@model List<MVC.ECommerce.Models.ProduitViewModels>
+﻿@model MVC.ECommerce.Models.HomeViewModel
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Accueil";
 }
 
 <div class="jumbotron">
-    <h1>Liste des produits</h1>
+    <h1>ECommerce</h1>
 </div>
 
 <div class="container">
-    <div class="row text-center">
-        @Html.ActionLink("Ajouter un produit", "AddProduit", "Produit", null, new { @class = "btn btn-primary" })
+    <div class="list-group">
+        <li class="list-group-item active"><span class="text-bold">Produits les plus chers :</span></li>
+        @foreach (var produit in Model.produits)
+        {
+            <a class="list-group-item" href="Produit/GetProduit/@produit.Id" title="@produit.Libelle">
+                <span>@produit.Libelle</span>
+                <span class="badge text-bold">@produit.Prix €</span>
+            </a>
+        }
     </div>
     <div class="list-group">
-        @foreach (var produit in Model)
+        <li class="list-group-item active"><span class="text-bold">Dernières commandes :</span></li>
+        @foreach (var commande in Model.commandes)
         {
-            @Html.ActionLink(@produit.Libelle, "GetProduit", "Produit", new { id = @produit.Id }, new { @class = "list-group-item" })
+            <li class="list-group-item">@commande.DateCommande</li> 
         }
     </div>
 </div>

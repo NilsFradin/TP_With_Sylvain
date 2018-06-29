@@ -21,17 +21,5 @@ namespace BusinessLayer.ECommerce.Queries
         {
             return _contexte.Categories;
         }
-
-        public Categorie Add(Categorie categorie)
-        {
-            _contexte.Categories.Add(categorie);
-            return categorie;
-        }
-
-        public Categorie Delete(Categorie categorie)
-        {
-            _contexte.Categories.Remove(categorie);
-            return categorie;
-        }
     }
 }

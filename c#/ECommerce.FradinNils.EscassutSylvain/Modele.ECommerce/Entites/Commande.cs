@@ -8,6 +8,11 @@ namespace Modele.ECommerce.Entites
 {
     public class Commande
     {
+        public Commande()
+        {
+            DateCommande = DateTime.Now;
+        }
+
         public int Id { get; set; }
 
         public DateTime DateCommande { get; set; }

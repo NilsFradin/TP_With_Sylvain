@@ -67,6 +67,7 @@
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\DetailProduitViewModel.cs" />
     <Compile Include="ViewModel\ListeProduitsViewModel.cs" />
+    <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="View\DetailProduit.xaml.cs">
       <DependentUpon>DetailProduit.xaml</DependentUpon>
     </Compile>

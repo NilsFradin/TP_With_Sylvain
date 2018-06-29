@@ -1,0 +1,27 @@
+﻿@model List<MVC.ECommerce.Models.ProduitViewModel>
+@{
+    ViewBag.Title = "Nos Produits";
+}
+
+<div class="container">
+    <hr/>
+    <div class="row">
+        <div class="col-md-10">
+            <h3>Nos Produits</h3>
+        </div>
+        <div class="col-md-2">
+            @Html.ActionLink("Ajouter un produit", "AddProduit", "Produit", null, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+    <hr/>
+    <div class="list-group">
+        @foreach (var produit in Model)
+        {
+            <a class="list-group-item" href="GetProduit/@produit.Id" title="@produit.Libelle">
+                <span>@produit.Libelle</span>
+                <span class="badge text-bold">@produit.Prix €</span>
+            </a>
+        }
+    </div>
+</div>
+

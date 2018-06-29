@@ -9,7 +9,7 @@
              d:DesignHeight="300" d:DesignWidth="525">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="35"></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
@@ -19,11 +19,16 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <ListView Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Margin="5px" ItemsSource="{Binding Produits, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedProduit, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+        <WrapPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal">
+            <TextBox Text="{Binding Recherche}" Height="35" Width="200" Tag="Libellé"></TextBox>
+            <Button Command="{Binding ActionRechercher}" Width="Auto">Rechercher</Button>
+        </WrapPanel>
+        
+        <ListView Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" ItemsSource="{Binding Produits, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedProduit, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="100px" Header="Code" DisplayMemberBinding="{Binding Code}"/>
-                    <GridViewColumn Width="150px" Header="Libelle" DisplayMemberBinding="{Binding Libelle}"/>
+                    <GridViewColumn Width="Auto" Header="Libelle" DisplayMemberBinding="{Binding Libelle}"/>
                 </GridView>
             </ListView.View>
         </ListView>

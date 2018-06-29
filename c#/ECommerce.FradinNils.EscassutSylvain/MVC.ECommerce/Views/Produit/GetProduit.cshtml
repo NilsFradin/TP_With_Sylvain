@@ -1,13 +1,23 @@
-﻿@model MVC.ECommerce.Models.ProduitViewModels
+﻿@model MVC.ECommerce.Models.ProduitViewModel
 @{
-    ViewBag.Title = "GetProduit";
+    ViewBag.Title = Model.Libelle;
 }
 
 <div class="container">
-    <h1>@Model.Libelle</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-9">
+            <h1>@Model.Libelle</h1>
+        </div>
+        <div class="col-md-3">
+                @Html.ActionLink("Modifier", "UpdateProduit", "Produit", new { id = @Model.Id }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Supprimer", "DeleteProduit", "Produit", new { id = @Model.Id }, new { @class = "btn btn-danger" })
+        </div>
+    </div>
+    <hr />
     <p>Prix : @Model.Prix €</p>
     <p>Stock : @Model.Stock</p>
     <p>Code : @Model.Code</p>
-    <p>@Html.ActionLink("Modifier", "UpdateProduit", "Produit", new { id = @Model.Id }, new { @class = "list-group-item" })</p>
+    <p>Description : @Model.Description</p>
 </div>
 

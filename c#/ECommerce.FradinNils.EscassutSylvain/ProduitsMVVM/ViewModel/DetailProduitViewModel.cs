@@ -4,57 +4,67 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using BusinessLayer.ECommerce;
 
 namespace ProduitsMVVM.ViewModel
 {
     public class DetailProduitViewModel : BaseViewModel
     {
-        private int _code;
-        private string _libelle;
-        private string _description;
-        private float _prix;
-        private int _stock;
+        private Produit produit;
+        private RelayCommand _actionModifier;
                
 
         public DetailProduitViewModel(Produit p)
         {
-            this._code = p.Code;
-            this._libelle = p.Libelle;
-            this._description = p.Description;
-            this._prix = p.Prix;
-            this._stock = p.Stock;
+            this.produit = p;
+        }
+
+        public ICommand ActionModifier
+        {
+            get
+            {
+                if (_actionModifier == null)
+                    _actionModifier = new RelayCommand(() => this.ModifierProduit());
+                return _actionModifier;
+            }
+        }
+
+        private void ModifierProduit()
+        {
+            Manager.Instance.UpdateProduit(this.produit);
         }
 
         #region GET SET
 
         public int Code
         {
-            get { return _code; }
-            set { _code = value; }
+            get { return this.produit.Code; }
+            set { this.produit.Code = value; }
         }
 
         public string Libelle
         {
-            get { return _libelle; } 
-            set { _libelle = value; }
+            get { return this.produit.Libelle; } 
+            set { this.produit.Libelle = value; }
         }
 
         public string Description
         {
-            get { return _description; }
-            set { _description = value; }
+            get { return this.produit.Description; }
+            set { this.produit.Description = value; }
         }
 
         public float Prix
         {
-            get { return _prix; }
-            set { _prix = value; }
+            get { return this.produit.Prix; }
+            set { this.produit.Prix = value; }
         }
 
         public int Stock
         {
-            get { return _stock; } 
-            set { _stock = value; }
+            get { return this.produit.Stock; } 
+            set { this.produit.Stock = value; }
         }
 
         #endregion

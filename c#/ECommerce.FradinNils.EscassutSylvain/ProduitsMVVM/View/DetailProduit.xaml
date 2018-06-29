@@ -10,9 +10,9 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
             <RowDefinition></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -24,16 +24,21 @@
         <Label Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="0" HorizontalAlignment="Stretch" Background="AliceBlue" FontWeight="Bold">FICHE PRODUIT</Label>
 
         <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Orientation="Vertical" Margin="5px">
-            <Label>Code du produit</Label>
+            <Label>Code :</Label>
             <TextBox Text="{Binding Code}"></TextBox>
-            <Label>Libelle du produit</Label>
+            <Label>Libellé :</Label>
             <TextBox Text="{Binding Libelle}"></TextBox>
         </StackPanel>
         <StackPanel Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Orientation="Vertical" Margin="5px">
-            <Label>Prix du produit</Label>
+            <Label>Prix :</Label>
             <TextBox Text="{Binding Prix}"></TextBox>
-            <Label>Stock du produit</Label>
+            <Label>Stock :</Label>
             <TextBox Text="{Binding Stock}"></TextBox>
         </StackPanel>
+        <StackPanel Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4" Orientation="Vertical">
+            <Label>Description :</Label>
+            <TextBox TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Text="{Binding Description}"></TextBox>
+        </StackPanel>
+        <Button Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Command="{Binding ActionModifier}">Modifier</Button>
     </Grid>
 </UserControl>

@@ -22,16 +22,9 @@ namespace BusinessLayer.ECommerce.Queries
             return _contexte.Commandes;
         }
 
-        public Commande Add(Commande commande)
+        public IQueryable<Commande> GetFiveCommande()
         {
-            _contexte.Commandes.Add(commande);
-            return commande;
-        }
-
-        public Commande Delete(Commande commande)
-        {
-            _contexte.Commandes.Remove(commande);
-            return commande;
+            return _contexte.Commandes.OrderByDescending(c => c.DateCommande).Take(5);
         }
     }
 }

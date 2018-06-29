@@ -1,15 +1,57 @@
-﻿@{
-    ViewBag.Title = "AddProduit";
+﻿@model MVC.ECommerce.Models.ProduitViewModel
+@{
+    ViewBag.Title = "Ajout Produit";
 }
 
 <div class="container">
-    <form method="post">
-        <div class="form-group">
-            @Html.TextBox("libelle", null, new { @class = "form-control", @placeholder = "Libelle" })
-            @Html.TextBox("code", null, new { @class = "form-control", @placeholder = "Code" })
-            @Html.TextBox("prix", null, new { @class = "form-control", @placeholder = "Prix" })
-            @Html.TextBox("stock", null, new { @class = "form-control", @placeholder = "Stock" })
+    <h1 class="text-center">Ajout d'un produit</h1>
+    @using (Html.BeginForm("AddProduit", "Produit"))
+    {
+        <div class="form-group row">
+            <div class="col-sm-4 col-form-label text-right">
+                <span>Libellé :</span>
+            </div>
+            <div class="col-sm-4">
+                @Html.TextBoxFor(p => p.Libelle, new { @class = "form-control", @placeholder = "Libellé" })
+            </div>
         </div>
-    </form>
+        <div class="form-group row">
+            <div class="col-sm-4 col-form-label text-right">
+                <span>Code :</span>
+            </div>
+            <div class="col-sm-4">
+                @Html.TextBoxFor(p => p.Code, new { @class = "form-control", @placeholder = "Code" })
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4 col-form-label text-right">
+                <span>Prix :</span>
+            </div>
+            <div class="col-sm-4">
+                @Html.TextBoxFor(p => p.Prix, new { @class = "form-control", @placeholder = "Prix" })
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4 col-form-label text-right">
+                <span>Stock :</span>
+            </div>
+            <div class="col-sm-4">
+                @Html.TextBoxFor(p => p.Stock, new { @class = "form-control", @placeholder = "Stock" })
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4 col-form-label text-right">
+                <span>Description :</span>
+            </div>
+            <div class="col-sm-4">
+                @Html.TextAreaFor(p => p.Description, new { @class = "form-control", @placeholder = "Description" })
+            </div>
+        </div>
+        <div class="row text-center">
+            <input type="submit" value="Ajouter" class="btn btn-primary" />
+        </div>
+    }
 </div>
+
+
 

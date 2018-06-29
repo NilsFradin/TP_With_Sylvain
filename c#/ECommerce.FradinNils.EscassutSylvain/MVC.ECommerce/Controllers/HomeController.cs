@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Service.ECommerce;
-using Service.ECommerce.Model;
+using BusinessLayer.ECommerce;
+using Modele.ECommerce.Entites;
 using MVC.ECommerce.Models;
 
 namespace MVC.ECommerce.Controllers
@@ -13,29 +13,22 @@ namespace MVC.ECommerce.Controllers
     {
         public ActionResult Index()
         {
-            ServiceECommerce service = new ServiceECommerce();
-            List<Produit> produits = service.GetProduits();
-            List<ProduitViewModels> produitsVM = new List<ProduitViewModels>();
-            foreach(Produit p in produits)
+            List<Produit> produits = Manager.Instance.GetFiveProduit();
+            List<ProduitViewModel> produitsVM = new List<ProduitViewModel>();
+            foreach (Produit p in produits)
             {
-                produitsVM.Add(new ProduitViewModels(p));
+                produitsVM.Add(new ProduitViewModel(p));
+            }
+            List<Commande> commandes = Manager.Instance.GetFiveCommande();
+            List<CommandeViewModel> commandesVM = new List<CommandeViewModel>();
+            foreach (Commande c in commandes)
+            {
+                commandesVM.Add(new CommandeViewModel(c));
             }
 
-            return View("Index", produitsVM);
-        }
+            HomeViewModel homeVM = new HomeViewModel(produitsVM, commandesVM);
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return View("Index", homeVM);
         }
     }
 }

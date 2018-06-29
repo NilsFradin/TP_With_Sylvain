@@ -21,17 +21,5 @@ namespace BusinessLayer.ECommerce.Queries
         {
             return _contexte.Clients;
         }
-
-        public Client Add(Client client)
-        {
-            _contexte.Clients.Add(client);
-            return client;
-        }
-
-        public Client Delete(Client client)
-        {
-            _contexte.Clients.Remove(client);
-            return client;
-        }
     }
 }

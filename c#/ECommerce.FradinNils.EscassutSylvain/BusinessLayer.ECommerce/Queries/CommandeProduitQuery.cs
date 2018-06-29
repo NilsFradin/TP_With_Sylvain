@@ -21,17 +21,5 @@ namespace BusinessLayer.ECommerce.Queries
         {
             return _contexte.CommandesProduits;
         }
-
-        public CommandeProduit Add(CommandeProduit commandeProduit)
-        {
-            _contexte.CommandesProduits.Add(commandeProduit);
-            return commandeProduit;
-        }
-
-        public CommandeProduit Delete(CommandeProduit commandeProduit)
-        {
-            _contexte.CommandesProduits.Remove(commandeProduit);
-            return commandeProduit;
-        }
     }
 }
